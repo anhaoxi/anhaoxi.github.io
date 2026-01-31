@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户协议 - 数独大师 SudokuOne</title>
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --primary-dark: #5a67d8;
+            --secondary-color: #764ba2;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --info-color: #3b82f6;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-light: #9ca3af;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-tertiary: #f3f4f6;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            min-height: 100vh;
+        }
+
+        /* Top Navigation Bar */
+        .top-nav {
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .top-nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .top-nav .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .top-nav .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .top-nav .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .top-nav .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .top-nav .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .top-nav .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+
+        .breadcrumb .separator {
+            margin: 0 8px;
+            color: var(--text-light);
+        }
+
+        .breadcrumb .current {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 40px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 32px;
+        }
+
+        /* Sidebar TOC */
+        .sidebar {
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
+        }
+
+        .sidebar-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 12px;
+            padding-left: 12px;
+        }
+
+        .toc {
+            background: white;
+            border-radius: 12px;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .toc a {
+            display: block;
+            padding: 8px 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+            margin-bottom: 2px;
+        }
+
+        .toc a:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .toc a.active {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* Content Area */
+        .content-wrapper {
+            background: white;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .content-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.5;
+        }
+
+        .content-header .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .content-header h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            position: relative;
+        }
+
+        .content-header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            position: relative;
+        }
+
+        .content-header .update-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            font-size: 0.8rem;
+            opacity: 0.85;
+            position: relative;
+        }
+
+        /* Language Tabs */
+        .language-tabs {
+            display: flex;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tab {
+            flex: 1;
+            padding: 16px;
+            text-align: center;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tab:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .tab.active {
+            color: var(--primary-color);
+            background: white;
+        }
+
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 3px 3px 0 0;
+        }
+
+        /* Content Body */
+        .content-body {
+            padding: 32px;
+        }
+
+        .language-content {
+            display: none;
+        }
+
+        .language-content.active {
+            display: block;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid var(--accent-color);
+            padding: 18px 20px;
+            border-radius: 10px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .warning-box .icon {
+            width: 24px;
+            height: 24px;
+            color: var(--accent-color);
+            flex-shrink: 0;
+        }
+
+        .warning-box strong {
+            color: #92400e;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .warning-box span {
+            color: #92400e;
+            font-size: 0.85rem;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 28px;
+            scroll-margin-top: 100px;
+        }
+
+        .section h2 {
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2 .number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .section h3 {
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section h3::before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .section p {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+        }
+
+        .section ul, .section ol {
+            margin: 12px 0 12px 20px;
+            color: var(--text-secondary);
+        }
+
+        .section li {
+            margin-bottom: 8px;
+            line-height: 1.65;
+        }
+
+        /* Restriction List */
+        .restriction-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .restriction-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 14px;
+            margin-bottom: 8px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border-left: 3px solid var(--danger-color);
+            font-size: 0.9rem;
+        }
+
+        .restriction-list li::before {
+            content: '❌';
+            flex-shrink: 0;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            border-left: 4px solid var(--info-color);
+            padding: 18px 20px;
+            border-radius: 10px;
+            margin: 16px 0;
+        }
+
+        .info-box ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .info-box li {
+            margin-bottom: 8px;
+            color: #1e40af;
+            font-size: 0.9rem;
+        }
+
+        .info-box strong {
+            color: #1e3a8a;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-left: 4px solid var(--success-color);
+            padding: 18px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .contact-box p {
+            margin-bottom: 8px;
+            color: #166534;
+            font-size: 0.9rem;
+        }
+
+        .contact-box strong {
+            color: #14532d;
+        }
+
+        .contact-box a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* Thank You Box */
+        .thank-you {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .thank-you p {
+            color: #6b21a8;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .thank-you p:first-child {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 24px;
+            background: white;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .content-header {
+                padding: 32px 24px;
+            }
+
+            .content-header h1 {
+                font-size: 1.4rem;
+            }
+
+            .content-body {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .top-nav .container {
+                padding: 0 16px;
+            }
+
+            .top-nav .nav-links {
+                gap: 16px;
+            }
+
+            .top-nav .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            .breadcrumb {
+                padding: 12px 16px;
+            }
+
+            .main-container {
+                padding: 0 16px 24px;
+            }
+
+            .content-header {
+                padding: 24px 20px;
+            }
+
+            .content-header h1 {
+                font-size: 1.2rem;
+            }
+
+            .content-body {
+                padding: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.1rem;
+            }
+
+            .back-to-top {
+                bottom: 16px;
+                right: 16px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .top-nav,
+            .sidebar,
+            .breadcrumb,
+            .language-tabs,
+            .footer,
+            .back-to-top {
+                display: none;
+            }
+
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .content-wrapper {
+                box-shadow: none;
+                border: none;
+            }
+
+            body {
+                background: white;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🎯</div>
+                <span>SudokuOne</span>
+            </a>
+            <div class="nav-links">
+                <a href="privacy-policy.html">隐私政策</a>
+                <a href="terms-of-use.html" class="active">用户协议</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">首页</a>
+        <span class="separator">/</span>
+        <span class="current">用户协议</span>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Sidebar TOC -->
+        <aside class="sidebar">
+            <div class="sidebar-title">目录</div>
+            <nav class="toc" id="toc">
+                <a href="#section-1" class="active">1. 接受条款</a>
+                <a href="#section-2">2. 许可授予</a>
+                <a href="#section-3">3. 知识产权</a>
+                <a href="#section-4">4. 用户内容和许可</a>
+                <a href="#section-5">5. 隐私</a>
+                <a href="#section-6">6. 免责声明</a>
+                <a href="#section-7">7. 责任限制</a>
+                <a href="#section-8">8. 终止</a>
+                <a href="#section-9">9. 第三方服务</a>
+                <a href="#section-10">10. 数据和备份</a>
+                <a href="#section-11">11. 更新和修改</a>
+                <a href="#section-12">12. 争议解决</a>
+                <a href="#section-13">13. 联系我们</a>
+            </nav>
+        </aside>
+
+        <!-- Content -->
+        <main class="content-wrapper">
+            <div class="content-header">
+                <div class="badge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                    付费应用 • 一次性购买
+                </div>
+                <h1>用户协议与最终用户许可协议</h1>
+                <div class="subtitle">Terms of Service & End User License Agreement</div>
+                <div class="update-date">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    最后更新：2026年1月31日
+                </div>
+            </div>
+
+            <div class="language-tabs">
+                <button class="tab active" onclick="switchLanguage('zh')">中文</button>
+                <button class="tab" onclick="switchLanguage('en')">English</button>
+            </div>
+
+            <div class="content-body">
+                <!-- 中文内容 -->
+                <div id="zh-content" class="language-content active">
+                    <div class="warning-box">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                        <div>
+                            <strong>请仔细阅读本用户协议</strong>
+                            <span>使用数独大师 SudokuOne 应用即表示您同意受本协议约束</span>
+                        </div>
+                    </div>
+
+                    <section class="section" id="section-1">
+                        <h2><span class="number">1</span>接受条款</h2>
+                        <p>通过下载、安装或使用<strong>数独大师 SudokuOne</strong>移动应用程序（"应用"），您同意受本用户协议（"协议"）的约束。如果您不同意本协议的任何部分，请不要使用本应用。</p>
+                        <p>本应用是一款<strong>付费应用</strong>。您一次性购买后，即可永久使用所有功能，享受未来的免费更新。</p>
+                    </section>
+
+                    <section class="section" id="section-2">
+                        <h2><span class="number">2</span>许可授予</h2>
+                        <h3>2.1 有限许可</h3>
+                        <p>在您支付应用购买费用并遵守本协议的前提下，我们授予您有限的、非独占的、不可转让的许可，允许您：</p>
+                        <ul>
+                            <li>在您拥有或控制的iOS设备上安装和使用本应用</li>
+                            <li>仅用于个人、非商业目的</li>
+                            <li>获得应用的所有未来更新，无需额外付费</li>
+                        </ul>
+
+                        <h3>2.2 付费与更新政策</h3>
+                        <div class="info-box">
+                            <ul>
+                                <li><strong>一次性购买</strong>：您只需支付一次费用即可永久使用本应用</li>
+                                <li><strong>免费更新</strong>：所有未来的功能更新、错误修复和改进均免费提供</li>
+                                <li><strong>无额外费用</strong>：应用内不包含任何需要额外付费的内购项目</li>
+                            </ul>
+                        </div>
+
+                        <h3>2.3 许可限制</h3>
+                        <p>您同意不会：</p>
+                        <ul class="restriction-list">
+                            <li>对本应用进行反向工程、反汇编或反编译</li>
+                            <li>试图破解、修改或创建本应用的衍生作品</li>
+                            <li>出售、出租、租赁、分发或转让本应用</li>
+                            <li>将本应用用于商业或盈利目的</li>
+                            <li>删除或修改本应用中的任何版权、商标或其他专有标记</li>
+                            <li>使用自动化工具（如机器人、蜘蛛）访问本应用</li>
+                        </ul>
+                    </section>
+
+                    <section class="section" id="section-3">
+                        <h2><span class="number">3</span>知识产权</h2>
+                        <h3>3.1 所有权</h3>
+                        <p>本应用及其所有内容、功能和特性均受版权、商标和其他知识产权法律的保护。本应用中包含的所有内容，包括游戏设计、用户界面、音频、文本和源代码，均为我们或我们的许可方的财产。</p>
+                        <h3>3.2 数独游戏规则</h3>
+                        <p>数独是一种经典的逻辑谜题游戏。本应用实现了数独游戏规则，这些规则属于公共领域。我们不对数独游戏规则本身主张知识产权。</p>
+                    </section>
+
+                    <section class="section" id="section-4">
+                        <h2><span class="number">4</span>用户内容和许可</h2>
+                        <h3>4.1 定义</h3>
+                        <p>"用户内容"是指您在使用本应用时创建或生成的内容，包括游戏进度、统计数据和分享截图。</p>
+                        <h3>4.2 您的权利</h3>
+                        <p>您保留对用户内容的所有权。通过使用本应用，您授予我们存储和处理您的游戏数据的许可，仅用于提供应用功能。</p>
+                    </section>
+
+                    <section class="section" id="section-5">
+                        <h2><span class="number">5</span>隐私</h2>
+                        <p>您的隐私对我们很重要。请查看我们的<a href="privacy-policy.html" style="color: var(--primary-color); font-weight: 600;">隐私政策</a>以了解我们如何收集、使用和保护您的信息。</p>
+                    </section>
+
+                    <section class="section" id="section-6">
+                        <h2><span class="number">6</span>免责声明</h2>
+                        <p>本应用按"原样"和"可用"的基础提供，不提供任何形式的明示或暗示的保证。我们不承诺应用将不间断、及时、安全或无错误地运行。</p>
+                    </section>
+
+                    <section class="section" id="section-7">
+                        <h2><span class="number">7</span>责任限制</h2>
+                        <p>在法律允许的最大范围内，我们不对间接、附带、特殊、惩罚性或后果性损害承担责任。如果我们因本协议而被认定应对损害负责，我们的全部责任不超过您为使用本应用支付的金额。</p>
+                    </section>
+
+                    <section class="section" id="section-8">
+                        <h2><span class="number">8</span>终止</h2>
+                        <h3>8.1 您终止的权利</h3>
+                        <p>您可以随时通过卸载本应用终止本协议。</p>
+                        <h3>8.2 我们终止的权利</h3>
+                        <p>我们保留在您违反本协议的任何条款或从事欺诈或非法活动时终止您访问本应用的权利。</p>
+                    </section>
+
+                    <section class="section" id="section-9">
+                        <h2><span class="number">9</span>第三方服务</h2>
+                        <p>本应用通过Apple App Store分发。Apple不是本协议的一方，对本应用不承担任何责任。本应用可能包含指向第三方网站的链接，我们不对第三方网站的内容、隐私实践或可用性负责。</p>
+                    </section>
+
+                    <section class="section" id="section-10">
+                        <h2><span class="number">10</span>数据和备份</h2>
+                        <p>您的游戏数据存储在您的设备本地。我们建议您定期备份设备。我们不因应用卸载、设备故障、软件更新或用户操作错误造成的任何数据丢失承担责任。</p>
+                    </section>
+
+                    <section class="section" id="section-11">
+                        <h2><span class="number">11</span>更新和修改</h2>
+                        <p>我们可能会自动更新本应用，添加或删除功能，或修改应用的行为。我们保留随时修改本协议的权利。重大变更将通过应用内通知或应用商店更新说明告知您。</p>
+                    </section>
+
+                    <section class="section" id="section-12">
+                        <h2><span class="number">12</span>争议解决</h2>
+                        <p>本协议受中华人民共和国法律管辖（如适用），或您居住地的法律管辖。任何争议应通过友好协商、书面通知或法律诉讼解决。</p>
+                    </section>
+
+                    <section class="section" id="section-13">
+                        <h2><span class="number">13</span>联系我们</h2>
+                        <div class="contact-box">
+                            <p><strong>联系方式：</strong></p>
+                            <p>📧 <strong>电子邮件：</strong><a href="mailto:99brose@gmail.com">99brose@gmail.com</a></p>
+                        </div>
+
+                        <div class="thank-you">
+                            <p>感谢您选择数独大师 SudokuOne！</p>
+                            <p>我们致力于为您提供最佳的数独游戏体验。</p>
+                            <p>如有任何问题、建议或反馈，请随时与我们联系。</p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- 英文内容 -->
+                <div id="en-content" class="language-content">
+                    <div class="warning-box">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                        <div>
+                            <strong>Please read this Terms of Service carefully</strong>
+                            <span>By using SudokuOne, you agree to be bound by these terms</span>
+                        </div>
+                    </div>
+
+                    <section class="section" id="section-1-en">
+                        <h2><span class="number">1</span>Acceptance of Terms</h2>
+                        <p>By downloading, installing, or using the <strong>SudokuOne</strong> mobile application ("App"), you agree to be bound by this Terms of Service ("Agreement"). If you do not agree to any part of this Agreement, do not use the App.</p>
+                        <p>This is a <strong>paid app</strong>. With a one-time purchase, you get permanent access to all features with free future updates.</p>
+                    </section>
+
+                    <section class="section" id="section-2-en">
+                        <h2><span class="number">2</span>License Grant</h2>
+                        <h3>2.1 Limited License</h3>
+                        <p>Subject to your payment of the app purchase price and your compliance with this Agreement, we grant you a limited, non-exclusive, non-transferable license to:</p>
+                        <ul>
+                            <li>Install and use the App on iOS devices you own or control</li>
+                            <li>Use it for personal, non-commercial purposes only</li>
+                            <li>Receive all future updates to the App at no additional cost</li>
+                        </ul>
+
+                        <h3>2.2 Payment and Update Policy</h3>
+                        <div class="info-box">
+                            <ul>
+                                <li><strong>One-time Purchase</strong>: You pay only once to use the App permanently</li>
+                                <li><strong>Free Updates</strong>: All future feature updates, bug fixes, and improvements are provided free of charge</li>
+                                <li><strong>No Additional Fees</strong>: The App does not contain any in-app purchases requiring additional payment</li>
+                            </ul>
+                        </div>
+
+                        <h3>2.3 License Restrictions</h3>
+                        <p>You agree not to:</p>
+                        <ul class="restriction-list">
+                            <li>Reverse engineer, decompile, or disassemble the App</li>
+                            <li>Attempt to hack, modify, or create derivative works of the App</li>
+                            <li>Sell, rent, lease, distribute, or transfer the App</li>
+                            <li>Use the App for commercial or profit-making purposes</li>
+                            <li>Remove or alter any copyright, trademark, or other proprietary marks in the App</li>
+                            <li>Use automated tools (such as bots, spiders) to access the App</li>
+                        </ul>
+                    </section>
+
+                    <section class="section" id="section-3-en">
+                        <h2><span class="number">3</span>Intellectual Property</h2>
+                        <h3>3.1 Ownership</h3>
+                        <p>The App and all its content, features, and functionality are protected by copyright, trademark, and other intellectual property laws.</p>
+                        <h3>3.2 Sudoku Game Rules</h3>
+                        <p>Sudoku is a classic logic puzzle game. This App implements Sudoku game rules, which are in the public domain.</p>
+                    </section>
+
+                    <section class="section" id="section-4-en">
+                        <h2><span class="number">4</span>User Content and License</h2>
+                        <h3>4.1 Definition</h3>
+                        <p>"User Content" means any content you create or generate when using the App, including game progress, statistics, and shared screenshots.</p>
+                        <h3>4.2 Your Rights</h3>
+                        <p>You retain ownership of your User Content. By using the App, you grant us a license to store and process your game data solely for providing App functionality.</p>
+                    </section>
+
+                    <section class="section" id="section-5-en">
+                        <h2><span class="number">5</span>Privacy</h2>
+                        <p>Your privacy is important to us. Please review our <a href="privacy-policy.html" style="color: var(--primary-color); font-weight: 600;">Privacy Policy</a> to learn how we collect, use, and protect your information.</p>
+                    </section>
+
+                    <section class="section" id="section-6-en">
+                        <h2><span class="number">6</span>Disclaimer</h2>
+                        <p>The App is provided on an "AS IS" and "AS AVAILABLE" basis, without any warranties of any kind. We do not promise that the App will be uninterrupted, timely, secure, or error-free.</p>
+                    </section>
+
+                    <section class="section" id="section-7-en">
+                        <h2><span class="number">7</span>Limitation of Liability</h2>
+                        <p>To the maximum extent permitted by law, we are not liable for indirect, incidental, special, punitive, or consequential damages. Our total liability shall not exceed the amount you paid for using the App.</p>
+                    </section>
+
+                    <section class="section" id="section-8-en">
+                        <h2><span class="number">8</span>Termination</h2>
+                        <h3>8.1 Your Right to Terminate</h3>
+                        <p>You may terminate this Agreement at any time by uninstalling the App.</p>
+                        <h3>8.2 Our Right to Terminate</h3>
+                        <p>We reserve the right to terminate your access to the App if you violate any term of this Agreement or engage in fraudulent or illegal activity.</p>
+                    </section>
+
+                    <section class="section" id="section-9-en">
+                        <h2><span class="number">9</span>Third-Party Services</h2>
+                        <p>This App is distributed through the Apple App Store. Apple is not a party to this Agreement. The App may contain links to third-party websites. We are not responsible for third-party websites.</p>
+                    </section>
+
+                    <section class="section" id="section-10-en">
+                        <h2><span class="number">10</span>Data and Backup</h2>
+                        <p>Your game data is stored locally on your device. We recommend regularly backing up your device. We are not liable for any data loss.</p>
+                    </section>
+
+                    <section class="section" id="section-11-en">
+                        <h2><span class="number">11</span>Updates and Modifications</h2>
+                        <p>We may automatically update the App, add or remove features, or modify App behavior. We reserve the right to modify this Agreement at any time.</p>
+                    </section>
+
+                    <section class="section" id="section-12-en">
+                        <h2><span class="number">12</span>Dispute Resolution</h2>
+                        <p>This Agreement is governed by the laws of the People's Republic of China (if applicable), or the laws of your place of residence.</p>
+                    </section>
+
+                    <section class="section" id="section-13-en">
+                        <h2><span class="number">13</span>Contact Us</h2>
+                        <div class="contact-box">
+                            <p><strong>Contact Information:</strong></p>
+                            <p>📧 <strong>Email</strong>: <a href="mailto:99brose@gmail.com">99brose@gmail.com</a></p>
+                        </div>
+
+                        <div class="thank-you">
+                            <p>Thank you for choosing SudokuOne!</p>
+                            <p>We are committed to providing you with the best Sudoku puzzle game experience.</p>
+                            <p>If you have any questions, suggestions, or feedback, please feel free to contact us.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">首页</a>
+            <a href="privacy-policy.html">隐私政策</a>
+            <a href="https://github.com/pm-yx/com.pmyx.Sudoku" target="_blank">GitHub</a>
+        </div>
+        <p>© 2026 数独大师 SudokuOne. All rights reserved.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <script>
+        // Language Switch
+        function switchLanguage(lang) {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            document.querySelectorAll('.language-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(lang + '-content').classList.add('active');
+
+            // Update TOC
+            updateTOC(lang);
+            window.location.hash = lang;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Check URL hash on load
+        window.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash;
+            if (hash === '#en') {
+                document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+                document.querySelectorAll('.tab')[1].classList.add('active');
+                document.querySelectorAll('.language-content').forEach(content => content.classList.remove('active'));
+                document.getElementById('en-content').classList.add('active');
+                updateTOC('en');
+            }
+            initTOCObserver();
+            initScrollListener();
+        });
+
+        // Update TOC based on language
+        function updateTOC(lang) {
+            const toc = document.getElementById('toc');
+            const sections = lang === 'en' ? [
+                {id: 'section-1-en', text: '1. Acceptance of Terms'},
+                {id: 'section-2-en', text: '2. License Grant'},
+                {id: 'section-3-en', text: '3. Intellectual Property'},
+                {id: 'section-4-en', text: '4. User Content'},
+                {id: 'section-5-en', text: '5. Privacy'},
+                {id: 'section-6-en', text: '6. Disclaimer'},
+                {id: 'section-7-en', text: '7. Limitation of Liability'},
+                {id: 'section-8-en', text: '8. Termination'},
+                {id: 'section-9-en', text: '9. Third-Party Services'},
+                {id: 'section-10-en', text: '10. Data and Backup'},
+                {id: 'section-11-en', text: '11. Updates'},
+                {id: 'section-12-en', text: '12. Dispute Resolution'},
+                {id: 'section-13-en', text: '13. Contact Us'}
+            ] : [
+                {id: 'section-1', text: '1. 接受条款'},
+                {id: 'section-2', text: '2. 许可授予'},
+                {id: 'section-3', text: '3. 知识产权'},
+                {id: 'section-4', text: '4. 用户内容和许可'},
+                {id: 'section-5', text: '5. 隐私'},
+                {id: 'section-6', text: '6. 免责声明'},
+                {id: 'section-7', text: '7. 责任限制'},
+                {id: 'section-8', text: '8. 终止'},
+                {id: 'section-9', text: '9. 第三方服务'},
+                {id: 'section-10', text: '10. 数据和备份'},
+                {id: 'section-11', text: '11. 更新和修改'},
+                {id: 'section-12', text: '12. 争议解决'},
+                {id: 'section-13', text: '13. 联系我们'}
+            ];
+
+            toc.innerHTML = sections.map(s => `<a href="#${s.id}">${s.text}</a>`).join('');
+        }
+
+        // TOC Active State Observer
+        function initTOCObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        document.querySelectorAll('.toc a').forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === '#' + id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            document.querySelectorAll('.section').forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        // Back to Top Button
+        function initScrollListener() {
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>隐私政策 - 数独大师 SudokuOne</title>
+    <title>数独大师 SudokuOne</title>
     <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f59e0b;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,184 +19,166 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            line-height: 1.8;
+            line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-attachment: fixed;
             min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 500px;
+            width: 100%;
             background: white;
-            border-radius: 16px;
+            border-radius: 24px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             overflow: hidden;
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 40px 30px;
+            padding: 50px 40px;
             text-align: center;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .header h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .header .subtitle {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        .language-tabs {
-            display: flex;
-            background: #f5f5f5;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .tab {
-            flex: 1;
-            padding: 15px;
-            text-align: center;
-            cursor: pointer;
-            background: #f5f5f5;
-            border: none;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-
-        .tab:hover {
-            background: #e8e8e8;
-        }
-
-        .tab.active {
-            background: white;
-            font-weight: 600;
-            color: #667eea;
-            border-bottom: 3px solid #667eea;
-        }
-
-        .content {
-            padding: 30px;
-        }
-
-        .language-content {
-            display: none;
-        }
-
-        .language-content.active {
-            display: block;
-        }
-
-        .update-date {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            font-size: 0.9rem;
-            color: #666;
-            text-align: center;
-        }
-
-        h2 {
-            color: #667eea;
-            font-size: 1.5rem;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e8e8f0;
-        }
-
-        h3 {
-            color: #555;
-            font-size: 1.2rem;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        li {
+            font-size: 1.6rem;
+            font-weight: 700;
             margin-bottom: 8px;
         }
 
-        .highlight-box {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.9;
         }
 
-        .important-note {
-            background: #e8f4fd;
-            border-left: 4px solid #2196F3;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
+        .content {
+            padding: 40px;
         }
 
-        .no-collect {
-            color: #dc3545;
-            font-weight: 500;
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
-        .contact-box {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        .contact-box p {
-            margin-bottom: 10px;
-        }
-
-        .contact-box a {
-            color: #667eea;
+        .link-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 24px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 16px;
             text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
 
-        .contact-box a:hover {
-            text-decoration: underline;
+        .link-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.25);
+            border-color: var(--primary-color);
+            background: white;
+        }
+
+        .link-card .icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .link-card .text {
+            flex: 1;
+        }
+
+        .link-card .title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 4px;
+        }
+
+        .link-card .description {
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+
+        .link-card .arrow {
+            color: var(--primary-color);
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .link-card:hover .arrow {
+            transform: translateX(4px);
         }
 
         .footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             background: #f8f9fa;
-            color: #999;
-            font-size: 0.9rem;
-            border-top: 1px solid #e0e0e0;
+            color: #9ca3af;
+            font-size: 0.85rem;
+            border-top: 1px solid #e5e7eb;
         }
 
-        @media (max-width: 600px) {
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
             .header {
-                padding: 30px 20px;
+                padding: 35px 25px;
             }
 
             .header h1 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
 
             .content {
-                padding: 20px;
+                padding: 25px 20px;
             }
 
-            h2 {
-                font-size: 1.3rem;
+            .link-card {
+                padding: 16px 18px;
+            }
+
+            .link-card .icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
             }
         }
     </style>
@@ -198,344 +186,37 @@
 <body>
     <div class="container">
         <div class="header">
+            <div class="app-icon">🎯</div>
             <h1>数独大师 SudokuOne</h1>
-            <div class="subtitle">隐私政策 / Privacy Policy</div>
-        </div>
-
-        <div class="language-tabs">
-            <button class="tab active" onclick="switchLanguage('zh')">中文</button>
-            <button class="tab" onclick="switchLanguage('en')">English</button>
+            <div class="subtitle">法律文档中心</div>
         </div>
 
         <div class="content">
-            <!-- 中文内容 -->
-            <div id="zh-content" class="language-content active">
-                <div class="update-date">
-                    <strong>最后更新日期：</strong>2026年1月31日
-                </div>
+            <div class="links">
+                <a href="privacy-policy.html" class="link-card">
+                    <div class="icon">🔒</div>
+                    <div class="text">
+                        <div class="title">隐私政策</div>
+                        <div class="description">Privacy Policy</div>
+                    </div>
+                    <div class="arrow">→</div>
+                </a>
 
-                <h2>1. 我们收集的信息</h2>
-                <p>本应用是一款<strong>付费数独游戏应用</strong>。您一次性购买后，即可永久使用所有功能，享受未来的免费更新。我们设计了最小化的数据收集策略，确保您的隐私得到充分保护。</p>
-
-                <h3>1.1 本地存储的游戏数据</h3>
-                <p>为了提供更好的游戏体验，以下数据将存储在您的设备本地：</p>
-                <ul>
-                    <li><strong>游戏进度</strong>：当前完成的关卡、未完成的关卡状态</li>
-                    <li><strong>游戏统计</strong>：游戏次数、胜率、最佳成绩等</li>
-                    <li><strong>成就数据</strong>：已解锁的成就和经验值</li>
-                    <li><strong>用户设置</strong>：主题偏好、语言选择、字体大小等</li>
-                    <li><strong>每日挑战记录</strong>：连续挑战天数和完成记录</li>
-                </ul>
-
-                <div class="important-note">
-                    <strong>重要说明：</strong>
-                    <ul style="margin-top: 10px; margin-bottom: 0;">
-                        <li>这些数据仅存储在您的设备本地，使用iOS的UserDefaults和文件系统</li>
-                        <li>我们不会将这些数据上传到我们的服务器</li>
-                        <li>删除应用后，这些数据将被永久删除</li>
-                    </ul>
-                </div>
-
-                <h3>1.2 照片库访问权限</h3>
-                <p>本应用提供游戏成绩分享功能，允许您将游戏完成截图保存到照片库。</p>
-                <ul>
-                    <li><strong>用途：</strong>仅在您主动选择"保存"操作时访问照片库</li>
-                    <li><strong>触发方式：</strong>手动点击保存按钮</li>
-                    <li><strong>数据使用：</strong>仅用于将生成的分享卡片写入您的照片库</li>
-                    <li><strong>第三方共享：</strong>我们不会将此权限用于任何其他目的</li>
-                </ul>
-
-                <h3>1.3 我们不收集的信息</h3>
-                <p class="no-collect">为了保护您的隐私，我们<strong>明确不收集</strong>以下信息：</p>
-                <ul class="no-collect">
-                    <li>❌ 您的姓名、电子邮件地址或电话号码</li>
-                    <li>❌ 您的真实身份信息</li>
-                    <li>❌ 地理位置</li>
-                    <li>❌ 设备唯一标识符（如IDFA）</li>
-                    <li>❌ 与第三方的数据共享</li>
-                    <li>❌ 任何用于广告跟踪的数据</li>
-                </ul>
-
-                <h2>2. 数据使用</h2>
-                <p>我们使用收集的数据仅用于以下目的：</p>
-
-                <h3>2.1 游戏功能</h3>
-                <ul>
-                    <li>保存和恢复游戏进度</li>
-                    <li>追踪成就和统计数据</li>
-                    <li>记住您的偏好设置</li>
-                    <li>提供个性化体验</li>
-                </ul>
-
-                <h3>2.2 应用改进</h3>
-                <ul>
-                    <li>分析用户使用模式以改进游戏功能</li>
-                    <li>修复错误和优化性能</li>
-                    <li>了解用户偏好以提供更好的体验</li>
-                </ul>
-
-                <h2>3. 数据共享和披露</h2>
-                <div class="highlight-box">
-                    <strong>我们不会出售、交易或出租您的个人信息给第三方。</strong>
-                </div>
-                <p>我们仅在以下情况下共享数据：</p>
-
-                <h3>3.1 服务提供商</h3>
-                <p>我们可能委托第三方公司代表我们提供服务，例如：</p>
-                <ul>
-                    <li>应用分发平台（App Store）</li>
-                    <li>数据分析工具（仅在您同意的情况下）</li>
-                </ul>
-                <p>这些服务提供商只能访问履行其职责所需的个人信息，并且有义务对这些信息保密。</p>
-
-                <h3>3.2 法律要求</h3>
-                <p>在以下情况下，我们可能披露您的信息：</p>
-                <ul>
-                    <li>遵守法律、法规或政府要求</li>
-                    <li>保护我们的权利、财产或安全</li>
-                    <li>在调查涉嫌非法活动时</li>
-                </ul>
-
-                <h2>4. 数据安全</h2>
-                <p>我们采取适当的安全措施来保护您的个人信息：</p>
-                <ul>
-                    <li><strong>本地加密：</strong>敏感数据在设备上加密存储</li>
-                    <li><strong>访问控制：</strong>只有授权人员才能访问应用数据</li>
-                    <li><strong>定期审核：</strong>我们定期审查我们的数据收集和存储实践</li>
-                </ul>
-                <p>然而，没有任何安全措施是完美的。我们无法保证绝对的安全性。</p>
-
-                <h2>5. 儿童隐私</h2>
-                <p>本应用适合所有年龄段的用户。我们：</p>
-                <ul>
-                    <li>不会故意收集13岁以下儿童的个人信息</li>
-                    <li>不会使用儿童的个人信息进行营销</li>
-                    <li>如果发现收集了儿童的信息，将立即删除</li>
-                </ul>
-
-                <h2>6. 您的隐私权利</h2>
-                <p>您对自己的数据享有以下权利：</p>
-
-                <h3>6.1 访问权</h3>
-                <p>您可以在应用的"设置" > "统计数据"中查看您的游戏进度和统计数据。</p>
-
-                <h3>6.2 删除权</h3>
-                <p>您可以通过以下方式删除您的数据：</p>
-                <ul>
-                    <li>在应用的"设置"中选择"清空所有记录"</li>
-                    <li>卸载应用以删除所有本地数据</li>
-                </ul>
-
-                <h3>6.3 更正权</h3>
-                <p>您可以在"设置"中随时修改您的偏好设置。</p>
-
-                <h3>6.4 数据可携带性</h3>
-                <p>您的所有数据都存储在您的设备上，您拥有完全的控制权。</p>
-
-                <h2>7. 第三方链接</h2>
-                <p>本应用可能包含指向第三方网站的链接（如支持页面）。我们不对这些外部网站的隐私实践负责。我们鼓励您阅读这些网站的隐私政策。</p>
-
-                <h2>8. 隐私政策的变更</h2>
-                <p>我们可能会不时更新本隐私政策。重大变更时，我们将在应用内通知您。您应该定期查看本页面以了解最新的隐私政策。</p>
-
-                <div class="highlight-box">
-                    <strong>修订历史：</strong>
-                    <ul style="margin-top: 10px;">
-                        <li>2026年1月31日：更新为付费应用模式说明</li>
-                        <li>2026年1月30日：初始版本发布</li>
-                    </ul>
-                </div>
-
-                <h2>9. 联系我们</h2>
-                <div class="contact-box">
-                    <p>如果您对本隐私政策有任何疑问或建议，请通过以下方式联系我们：</p>
-                    <p><strong>电子邮件：</strong><a href="mailto:your-email@example.com">your-email@example.com</a></p>
-                    <p><strong>GitHub Issues：</strong><a href="https://github.com/pm-yx/com.pmyx.Sudoku/issues" target="_blank">https://github.com/pm-yx/com.pmyx.Sudoku/issues</a></p>
-                    <p>我们将在收到您的询问后尽快回复，通常在7个工作日内。</p>
-                </div>
-            </div>
-
-            <!-- 英文内容 -->
-            <div id="en-content" class="language-content">
-                <div class="update-date">
-                    <strong>Last Updated:</strong> January 31, 2026
-                </div>
-
-                <h2>1. Information We Collect</h2>
-                <p>SudokuOne is a <strong>paid Sudoku puzzle game application</strong>. With a one-time purchase, you get permanent access to all features with free future updates. We have designed a minimal data collection approach to ensure your privacy is fully protected.</p>
-
-                <h3>1.1 Locally Stored Game Data</h3>
-                <p>To provide a better gaming experience, the following data is stored locally on your device:</p>
-                <ul>
-                    <li><strong>Game Progress</strong>: Completed levels, incomplete level states</li>
-                    <li><strong>Game Statistics</strong>: Number of games played, win rate, best scores</li>
-                    <li><strong>Achievement Data</strong>: Unlocked achievements and experience points</li>
-                    <li><strong>User Settings</strong>: Theme preferences, language selection, font size</li>
-                    <li><strong>Daily Challenge Records</strong>: Challenge streak and completion records</li>
-                </ul>
-
-                <div class="important-note">
-                    <strong>Important Notes:</strong>
-                    <ul style="margin-top: 10px; margin-bottom: 0;">
-                        <li>This data is stored only on your device locally using iOS UserDefaults and file system</li>
-                        <li>We do not upload this data to our servers</li>
-                        <li>Deleting the app will permanently delete this data</li>
-                    </ul>
-                </div>
-
-                <h3>1.2 Photo Library Access</h3>
-                <p>The app provides a game score sharing feature, allowing you to save game completion screenshots to your photo library.</p>
-                <ul>
-                    <li><strong>Purpose</strong>: Only accesses photo library when you actively choose to "save"</li>
-                    <li><strong>Trigger</strong>: Manual save button click</li>
-                    <li><strong>Data Use</strong>: Only writes generated share cards to your photo library</li>
-                    <li><strong>Third-party Sharing</strong>: We do not use this permission for any other purpose</li>
-                </ul>
-
-                <h3>1.3 Information We Do NOT Collect</h3>
-                <p class="no-collect">To protect your privacy, we <strong>explicitly do NOT collect</strong>:</p>
-                <ul class="no-collect">
-                    <li>❌ Your name, email address, or phone number</li>
-                    <li>❌ Your real identity</li>
-                    <li>❌ Geographic location</li>
-                    <li>❌ Device unique identifiers (such as IDFA)</li>
-                    <li>❌ Data sharing with third parties</li>
-                    <li>❌ Any data for advertising tracking</li>
-                </ul>
-
-                <h2>2. How We Use Your Data</h2>
-                <p>We use collected data only for the following purposes:</p>
-
-                <h3>2.1 Game Features</h3>
-                <ul>
-                    <li>Save and restore game progress</li>
-                    <li>Track achievements and statistics</li>
-                    <li>Remember your preferences</li>
-                    <li>Provide personalized experience</li>
-                </ul>
-
-                <h3>2.2 App Improvement</h3>
-                <ul>
-                    <li>Analyze usage patterns to improve game features</li>
-                    <li>Fix bugs and optimize performance</li>
-                    <li>Understand user preferences to deliver better experience</li>
-                </ul>
-
-                <h2>3. Data Sharing and Disclosure</h2>
-                <div class="highlight-box">
-                    <strong>We do not sell, trade, or rent your personal information to third parties.</strong>
-                </div>
-                <p>We only share data in the following circumstances:</p>
-
-                <h3>3.1 Service Providers</h3>
-                <p>We may engage third-party companies to perform services on our behalf, such as:</p>
-                <ul>
-                    <li>App distribution platforms (App Store)</li>
-                    <li>Analytics tools (only with your consent)</li>
-                </ul>
-                <p>These service providers have access to personal information only to perform specific tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
-
-                <h3>3.2 Legal Requirements</h3>
-                <p>We may disclose your information when:</p>
-                <ul>
-                    <li>Complying with laws, regulations, or government requests</li>
-                    <li>Protecting our rights, property, or safety</li>
-                    <li>Investigating alleged illegal activities</li>
-                </ul>
-
-                <h2>4. Data Security</h2>
-                <p>We take appropriate security measures to protect your personal information:</p>
-                <ul>
-                    <li><strong>Local Encryption</strong>: Sensitive data is encrypted on device</li>
-                    <li><strong>Access Control</strong>: Only authorized personnel can access app data</li>
-                    <li><strong>Regular Audits</strong>: We regularly review our data collection and storage practices</li>
-                </ul>
-                <p>However, no security measure is perfect. We cannot guarantee absolute security.</p>
-
-                <h2>5. Children's Privacy</h2>
-                <p>This app is suitable for users of all ages. We:</p>
-                <ul>
-                    <li>Do not knowingly collect personal information from children under 13</li>
-                    <li>Do not use children's personal information for marketing</li>
-                    <li>Will delete such information if discovered</li>
-                </ul>
-
-                <h2>6. Your Privacy Rights</h2>
-                <p>You have the following rights regarding your data:</p>
-
-                <h3>6.1 Access Right</h3>
-                <p>You can view your game progress and statistics in the app's "Settings" > "Statistics".</p>
-
-                <h3>6.2 Deletion Right</h3>
-                <p>You can delete your data by:</p>
-                <ul>
-                    <li>Selecting "Clear All Data" in app "Settings"</li>
-                    <li>Uninstalling the app to delete all local data</li>
-                </ul>
-
-                <h3>6.3 Correction Right</h3>
-                <p>You can modify your preferences in "Settings" at any time.</p>
-
-                <h3>6.4 Data Portability</h3>
-                <p>All your data is stored on your device, and you have complete control.</p>
-
-                <h2>7. Third-Party Links</h2>
-                <p>This app may contain links to third-party websites (such as support pages). We are not responsible for the privacy practices of these external sites. We encourage you to read the privacy policies of these websites.</p>
-
-                <h2>8. Changes to This Privacy Policy</h2>
-                <p>We may update this Privacy Policy from time to time. We will notify you of any changes in the app. You should check this page periodically for the latest privacy policy.</p>
-
-                <div class="highlight-box">
-                    <strong>Revision History:</strong>
-                    <ul style="margin-top: 10px;">
-                        <li>January 31, 2026: Updated to paid app model description</li>
-                        <li>January 30, 2026: Initial version published</li>
-                    </ul>
-                </div>
-
-                <h2>9. Contact Us</h2>
-                <div class="contact-box">
-                    <p>If you have any questions or suggestions about this Privacy Policy, please contact us:</p>
-                    <p><strong>Email</strong>: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-                    <p><strong>GitHub Issues</strong>: <a href="https://github.com/pm-yx/com.pmyx.Sudoku/issues" target="_blank">https://github.com/pm-yx/com.pmyx.Sudoku/issues</a></p>
-                    <p>We will respond to your inquiry as soon as possible, typically within 7 business days.</p>
-                </div>
+                <a href="terms-of-use.html" class="link-card">
+                    <div class="icon">📜</div>
+                    <div class="text">
+                        <div class="title">用户协议</div>
+                        <div class="description">Terms of Service</div>
+                    </div>
+                    <div class="arrow">→</div>
+                </a>
             </div>
         </div>
 
         <div class="footer">
-            © 2026 数独大师 SudokuOne. All rights reserved.
+            <p>© 2026 数独大师 SudokuOne. All rights reserved.</p>
+          
         </div>
     </div>
-
-    <script>
-        function switchLanguage(lang) {
-            // Update tabs
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            event.target.classList.add('active');
-
-            // Update content
-            document.querySelectorAll('.language-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            document.getElementById(lang + '-content').classList.add('active');
-
-            // Update URL hash
-            window.location.hash = lang;
-        }
-
-        // Check URL hash on load
-        window.addEventListener('DOMContentLoaded', function() {
-            const hash = window.location.hash;
-            if (hash === '#en') {
-                document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-                document.querySelectorAll('.tab')[1].classList.add('active');
-                document.querySelectorAll('.language-content').forEach(content => content.classList.remove('active'));
-                document.getElementById('en-content').classList.add('active');
-            }
-        });
-    </script>
 </body>
 </html>
