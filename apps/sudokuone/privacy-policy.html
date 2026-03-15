@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>用户协议 - 数独大师 SudokuOne</title>
+    <title>隐私政策 - 数独大师 SudokuOne</title>
     <style>
         :root {
             --primary-color: #667eea;
@@ -315,37 +315,6 @@
             display: block;
         }
 
-        /* Warning Box */
-        .warning-box {
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            border-left: 4px solid var(--accent-color);
-            padding: 18px 20px;
-            border-radius: 10px;
-            margin-bottom: 28px;
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-        }
-
-        .warning-box .icon {
-            width: 24px;
-            height: 24px;
-            color: var(--accent-color);
-            flex-shrink: 0;
-        }
-
-        .warning-box strong {
-            color: #92400e;
-            font-size: 0.95rem;
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        .warning-box span {
-            color: #92400e;
-            font-size: 0.85rem;
-        }
-
         /* Sections */
         .section {
             margin-bottom: 28px;
@@ -412,29 +381,6 @@
             line-height: 1.65;
         }
 
-        /* Restriction List */
-        .restriction-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .restriction-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            padding: 10px 14px;
-            margin-bottom: 8px;
-            background: var(--bg-secondary);
-            border-radius: 8px;
-            border-left: 3px solid var(--danger-color);
-            font-size: 0.9rem;
-        }
-
-        .restriction-list li::before {
-            content: '❌';
-            flex-shrink: 0;
-        }
-
         /* Info Box */
         .info-box {
             background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
@@ -457,6 +403,53 @@
 
         .info-box strong {
             color: #1e3a8a;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid var(--accent-color);
+            padding: 18px 20px;
+            border-radius: 10px;
+            margin: 16px 0;
+        }
+
+        .highlight-box strong {
+            color: #92400e;
+        }
+
+        /* Warning Box - No Collect */
+        .warning-box {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-left: 4px solid var(--danger-color);
+            padding: 18px 20px;
+            border-radius: 10px;
+            margin: 16px 0;
+        }
+
+        .warning-box strong {
+            color: #991b1b;
+        }
+
+        .no-collect-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .no-collect-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .no-collect-list li::before {
+            content: '❌';
+            flex-shrink: 0;
         }
 
         /* Contact Box */
@@ -486,27 +479,6 @@
 
         .contact-box a:hover {
             text-decoration: underline;
-        }
-
-        /* Thank You Box */
-        .thank-you {
-            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
-            border-left: 4px solid var(--secondary-color);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .thank-you p {
-            color: #6b21a8;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-        }
-
-        .thank-you p:first-child {
-            font-size: 1rem;
-            font-weight: 600;
         }
 
         /* Footer */
@@ -678,13 +650,13 @@
         <div class="container">
             <a href="index.html" class="logo">
                 <div class="logo-icon">
-                    <img src="images/sudokuone.png" alt="数独大师">
+                    <img src="../images/sudokuone.png" alt="数独大师">
                 </div>
                 <span>SudokuOne</span>
             </a>
             <div class="nav-links">
-                <a href="privacy-policy.html">隐私政策</a>
-                <a href="terms-of-use.html" class="active">用户协议</a>
+                <a href="privacy-policy.html" class="active">隐私政策</a>
+                <a href="terms-of-use.html">用户协议</a>
             </div>
         </div>
     </nav>
@@ -693,7 +665,7 @@
     <div class="breadcrumb">
         <a href="index.html">首页</a>
         <span class="separator">/</span>
-        <span class="current">用户协议</span>
+        <span class="current">隐私政策</span>
     </div>
 
     <!-- Main Content -->
@@ -702,19 +674,15 @@
         <aside class="sidebar">
             <div class="sidebar-title">目录</div>
             <nav class="toc" id="toc">
-                <a href="#section-1" class="active">1. 接受条款</a>
-                <a href="#section-2">2. 许可授予</a>
-                <a href="#section-3">3. 知识产权</a>
-                <a href="#section-4">4. 用户内容和许可</a>
-                <a href="#section-5">5. 隐私</a>
-                <a href="#section-6">6. 免责声明</a>
-                <a href="#section-7">7. 责任限制</a>
-                <a href="#section-8">8. 终止</a>
-                <a href="#section-9">9. 第三方服务</a>
-                <a href="#section-10">10. 数据和备份</a>
-                <a href="#section-11">11. 更新和修改</a>
-                <a href="#section-12">12. 争议解决</a>
-                <a href="#section-13">13. 联系我们</a>
+                <a href="#section-1" class="active">1. 收集的信息</a>
+                <a href="#section-2">2. 数据使用</a>
+                <a href="#section-3">3. 数据共享</a>
+                <a href="#section-4">4. 数据安全</a>
+                <a href="#section-5">5. 儿童隐私</a>
+                <a href="#section-6">6. 隐私权利</a>
+                <a href="#section-7">7. 第三方链接</a>
+                <a href="#section-8">8. 政策变更</a>
+                <a href="#section-9">9. 联系我们</a>
             </nav>
         </aside>
 
@@ -723,12 +691,12 @@
             <div class="content-header">
                 <div class="badge">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                     </svg>
-                    付费应用 • 一次性购买
+                    隐私保护 • 数据安全
                 </div>
-                <h1>用户协议与最终用户许可协议</h1>
-                <div class="subtitle">Terms of Service & End User License Agreement</div>
+                <h1>隐私政策</h1>
+                <div class="subtitle">Privacy Policy</div>
                 <div class="update-date">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
@@ -748,250 +716,308 @@
             <div class="content-body">
                 <!-- 中文内容 -->
                 <div id="zh-content" class="language-content active">
-                    <div class="warning-box">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                            <line x1="12" y1="9" x2="12" y2="13"/>
-                            <line x1="12" y1="17" x2="12.01" y2="17"/>
-                        </svg>
-                        <div>
-                            <strong>请仔细阅读本用户协议</strong>
-                            <span>使用数独大师 SudokuOne 应用即表示您同意受本协议约束</span>
-                        </div>
-                    </div>
-
                     <section class="section" id="section-1">
-                        <h2><span class="number">1</span>接受条款</h2>
-                        <p>通过下载、安装或使用<strong>数独大师 SudokuOne</strong>移动应用程序（"应用"），您同意受本用户协议（"协议"）的约束。如果您不同意本协议的任何部分，请不要使用本应用。</p>
-                        <p>本应用是一款<strong>付费应用</strong>。您一次性购买后，即可永久使用所有功能，享受未来的免费更新。</p>
-                    </section>
+                        <h2><span class="number">1</span>我们收集的信息</h2>
+                        <p>本应用是一款<strong>付费数独游戏应用</strong>。您一次性购买后，即可永久使用所有功能，享受未来的免费更新。我们设计了最小化的数据收集策略，确保您的隐私得到充分保护。</p>
 
-                    <section class="section" id="section-2">
-                        <h2><span class="number">2</span>许可授予</h2>
-                        <h3>2.1 有限许可</h3>
-                        <p>在您支付应用购买费用并遵守本协议的前提下，我们授予您有限的、非独占的、不可转让的许可，允许您：</p>
+                        <h3>1.1 本地存储的游戏数据</h3>
+                        <p>为了提供更好的游戏体验，以下数据将存储在您的设备本地：</p>
                         <ul>
-                            <li>在您拥有或控制的iOS设备上安装和使用本应用</li>
-                            <li>仅用于个人、非商业目的</li>
-                            <li>获得应用的所有未来更新，无需额外付费</li>
+                            <li><strong>游戏进度</strong>：当前完成的关卡、未完成的关卡状态</li>
+                            <li><strong>游戏统计</strong>：游戏次数、胜率、最佳成绩等</li>
+                            <li><strong>成就数据</strong>：已解锁的成就和经验值</li>
+                            <li><strong>用户设置</strong>：主题偏好、语言选择、字体大小等</li>
+                            <li><strong>每日挑战记录</strong>：连续挑战天数和完成记录</li>
                         </ul>
 
-                        <h3>2.2 付费与更新政策</h3>
                         <div class="info-box">
+                            <strong>重要说明：</strong>
                             <ul>
-                                <li><strong>一次性购买</strong>：您只需支付一次费用即可永久使用本应用</li>
-                                <li><strong>免费更新</strong>：所有未来的功能更新、错误修复和改进均免费提供</li>
-                                <li><strong>无额外费用</strong>：应用内不包含任何需要额外付费的内购项目</li>
+                                <li>这些数据仅存储在您的设备本地，使用iOS的UserDefaults和文件系统</li>
+                                <li>我们不会将这些数据上传到我们的服务器</li>
+                                <li>删除应用后，这些数据将被永久删除</li>
                             </ul>
                         </div>
 
-                        <h3>2.3 许可限制</h3>
-                        <p>您同意不会：</p>
-                        <ul class="restriction-list">
-                            <li>对本应用进行反向工程、反汇编或反编译</li>
-                            <li>试图破解、修改或创建本应用的衍生作品</li>
-                            <li>出售、出租、租赁、分发或转让本应用</li>
-                            <li>将本应用用于商业或盈利目的</li>
-                            <li>删除或修改本应用中的任何版权、商标或其他专有标记</li>
-                            <li>使用自动化工具（如机器人、蜘蛛）访问本应用</li>
+                        <h3>1.2 照片库访问权限</h3>
+                        <p>本应用提供游戏成绩分享功能，允许您将游戏完成截图保存到照片库。</p>
+                        <ul>
+                            <li><strong>用途：</strong>仅在您主动选择"保存"操作时访问照片库</li>
+                            <li><strong>触发方式：</strong>手动点击保存按钮</li>
+                            <li><strong>数据使用：</strong>仅用于将生成的分享卡片写入您的照片库</li>
+                            <li><strong>第三方共享：</strong>我们不会将此权限用于任何其他目的</li>
+                        </ul>
+
+                        <h3>1.3 我们不收集的信息</h3>
+                        <div class="warning-box">
+                            <strong>为了保护您的隐私，我们明确不收集以下信息：</strong>
+                            <ul class="no-collect-list" style="margin-top: 10px;">
+                                <li>您的姓名、电子邮件地址或电话号码</li>
+                                <li>您的真实身份信息</li>
+                                <li>地理位置</li>
+                                <li>设备唯一标识符（如IDFA）</li>
+                                <li>与第三方的数据共享</li>
+                                <li>任何用于广告跟踪的数据</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="section" id="section-2">
+                        <h2><span class="number">2</span>数据使用</h2>
+                        <p>我们使用收集的数据仅用于以下目的：</p>
+
+                        <h3>2.1 游戏功能</h3>
+                        <ul>
+                            <li>保存和恢复游戏进度</li>
+                            <li>追踪成就和统计数据</li>
+                            <li>记住您的偏好设置</li>
+                            <li>提供个性化体验</li>
+                        </ul>
+
+                        <h3>2.2 应用改进</h3>
+                        <ul>
+                            <li>分析用户使用模式以改进游戏功能</li>
+                            <li>修复错误和优化性能</li>
+                            <li>了解用户偏好以提供更好的体验</li>
                         </ul>
                     </section>
 
                     <section class="section" id="section-3">
-                        <h2><span class="number">3</span>知识产权</h2>
-                        <h3>3.1 所有权</h3>
-                        <p>本应用及其所有内容、功能和特性均受版权、商标和其他知识产权法律的保护。本应用中包含的所有内容，包括游戏设计、用户界面、音频、文本和源代码，均为我们或我们的许可方的财产。</p>
-                        <h3>3.2 数独游戏规则</h3>
-                        <p>数独是一种经典的逻辑谜题游戏。本应用实现了数独游戏规则，这些规则属于公共领域。我们不对数独游戏规则本身主张知识产权。</p>
+                        <h2><span class="number">3</span>数据共享和披露</h2>
+                        <div class="highlight-box">
+                            <strong>我们不会出售、交易或出租您的个人信息给第三方。</strong>
+                        </div>
+                        <p>我们仅在以下情况下共享数据：</p>
+
+                        <h3>3.1 服务提供商</h3>
+                        <p>我们可能委托第三方公司代表我们提供服务，例如：</p>
+                        <ul>
+                            <li>应用分发平台（App Store）</li>
+                            <li>数据分析工具（仅在您同意的情况下）</li>
+                        </ul>
+                        <p>这些服务提供商只能访问履行其职责所需的个人信息，并且有义务对这些信息保密。</p>
+
+                        <h3>3.2 法律要求</h3>
+                        <p>在以下情况下，我们可能披露您的信息：</p>
+                        <ul>
+                            <li>遵守法律、法规或政府要求</li>
+                            <li>保护我们的权利、财产或安全</li>
+                            <li>在调查涉嫌非法活动时</li>
+                        </ul>
                     </section>
 
                     <section class="section" id="section-4">
-                        <h2><span class="number">4</span>用户内容和许可</h2>
-                        <h3>4.1 定义</h3>
-                        <p>"用户内容"是指您在使用本应用时创建或生成的内容，包括游戏进度、统计数据和分享截图。</p>
-                        <h3>4.2 您的权利</h3>
-                        <p>您保留对用户内容的所有权。通过使用本应用，您授予我们存储和处理您的游戏数据的许可，仅用于提供应用功能。</p>
+                        <h2><span class="number">4</span>数据安全</h2>
+                        <p>我们采取适当的安全措施来保护您的个人信息：</p>
+                        <ul>
+                            <li><strong>本地加密：</strong>敏感数据在设备上加密存储</li>
+                            <li><strong>访问控制：</strong>只有授权人员才能访问应用数据</li>
+                            <li><strong>定期审核：</strong>我们定期审查我们的数据收集和存储实践</li>
+                        </ul>
+                        <p>然而，没有任何安全措施是完美的。我们无法保证绝对的安全性。</p>
                     </section>
 
                     <section class="section" id="section-5">
-                        <h2><span class="number">5</span>隐私</h2>
-                        <p>您的隐私对我们很重要。请查看我们的<a href="privacy-policy.html" style="color: var(--primary-color); font-weight: 600;">隐私政策</a>以了解我们如何收集、使用和保护您的信息。</p>
+                        <h2><span class="number">5</span>儿童隐私</h2>
+                        <p>本应用适合所有年龄段的用户。我们：</p>
+                        <ul>
+                            <li>不会故意收集13岁以下儿童的个人信息</li>
+                            <li>不会使用儿童的个人信息进行营销</li>
+                            <li>如果发现收集了儿童的信息，将立即删除</li>
+                        </ul>
                     </section>
 
                     <section class="section" id="section-6">
-                        <h2><span class="number">6</span>免责声明</h2>
-                        <p>本应用按"原样"和"可用"的基础提供，不提供任何形式的明示或暗示的保证。我们不承诺应用将不间断、及时、安全或无错误地运行。</p>
+                        <h2><span class="number">6</span>您的隐私权利</h2>
+                        <p>您对自己的数据享有以下权利：</p>
+
+                        <h3>6.1 访问权</h3>
+                        <p>您可以在应用的"设置" > "统计数据"中查看您的游戏进度和统计数据。</p>
+
+                        <h3>6.2 删除权</h3>
+                        <p>您可以通过以下方式删除您的数据：</p>
+                        <ul>
+                            <li>在应用的"设置"中选择"清空所有记录"</li>
+                            <li>卸载应用以删除所有本地数据</li>
+                        </ul>
+
+                        <h3>6.3 更正权</h3>
+                        <p>您可以在"设置"中随时修改您的偏好设置。</p>
+
+                        <h3>6.4 数据可携带性</h3>
+                        <p>您的所有数据都存储在您的设备上，您拥有完全的控制权。</p>
                     </section>
 
                     <section class="section" id="section-7">
-                        <h2><span class="number">7</span>责任限制</h2>
-                        <p>在法律允许的最大范围内，我们不对间接、附带、特殊、惩罚性或后果性损害承担责任。如果我们因本协议而被认定应对损害负责，我们的全部责任不超过您为使用本应用支付的金额。</p>
+                        <h2><span class="number">7</span>第三方链接</h2>
+                        <p>本应用可能包含指向第三方网站的链接（如支持页面）。我们不对这些外部网站的隐私实践负责。我们鼓励您阅读这些网站的隐私政策。</p>
                     </section>
 
                     <section class="section" id="section-8">
-                        <h2><span class="number">8</span>终止</h2>
-                        <h3>8.1 您终止的权利</h3>
-                        <p>您可以随时通过卸载本应用终止本协议。</p>
-                        <h3>8.2 我们终止的权利</h3>
-                        <p>我们保留在您违反本协议的任何条款或从事欺诈或非法活动时终止您访问本应用的权利。</p>
+                        <h2><span class="number">8</span>隐私政策的变更</h2>
+                        <p>我们可能会不时更新本隐私政策。重大变更时，我们将在应用内通知您。您应该定期查看本页面以了解最新的隐私政策。</p>
                     </section>
 
                     <section class="section" id="section-9">
-                        <h2><span class="number">9</span>第三方服务</h2>
-                        <p>本应用通过Apple App Store分发。Apple不是本协议的一方，对本应用不承担任何责任。本应用可能包含指向第三方网站的链接，我们不对第三方网站的内容、隐私实践或可用性负责。</p>
-                    </section>
-
-                    <section class="section" id="section-10">
-                        <h2><span class="number">10</span>数据和备份</h2>
-                        <p>您的游戏数据存储在您的设备本地。我们建议您定期备份设备。我们不因应用卸载、设备故障、软件更新或用户操作错误造成的任何数据丢失承担责任。</p>
-                    </section>
-
-                    <section class="section" id="section-11">
-                        <h2><span class="number">11</span>更新和修改</h2>
-                        <p>我们可能会自动更新本应用，添加或删除功能，或修改应用的行为。我们保留随时修改本协议的权利。重大变更将通过应用内通知或应用商店更新说明告知您。</p>
-                    </section>
-
-                    <section class="section" id="section-12">
-                        <h2><span class="number">12</span>争议解决</h2>
-                        <p>本协议受中华人民共和国法律管辖（如适用），或您居住地的法律管辖。任何争议应通过友好协商、书面通知或法律诉讼解决。</p>
-                    </section>
-
-                    <section class="section" id="section-13">
-                        <h2><span class="number">13</span>联系我们</h2>
+                        <h2><span class="number">9</span>联系我们</h2>
                         <div class="contact-box">
                             <p><strong>联系方式：</strong></p>
                             <p>📧 <strong>电子邮件：</strong><a href="mailto:99brose@gmail.com">99brose@gmail.com</a></p>
-                        </div>
-
-                        <div class="thank-you">
-                            <p>感谢您选择数独大师 SudokuOne！</p>
-                            <p>我们致力于为您提供最佳的数独游戏体验。</p>
-                            <p>如有任何问题、建议或反馈，请随时与我们联系。</p>
+                            <p>我们将在收到您的询问后尽快回复，通常在7个工作日内。</p>
                         </div>
                     </section>
                 </div>
 
                 <!-- 英文内容 -->
                 <div id="en-content" class="language-content">
-                    <div class="warning-box">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                            <line x1="12" y1="9" x2="12" y2="13"/>
-                            <line x1="12" y1="17" x2="12.01" y2="17"/>
-                        </svg>
-                        <div>
-                            <strong>Please read this Terms of Service carefully</strong>
-                            <span>By using SudokuOne, you agree to be bound by these terms</span>
-                        </div>
-                    </div>
-
                     <section class="section" id="section-1-en">
-                        <h2><span class="number">1</span>Acceptance of Terms</h2>
-                        <p>By downloading, installing, or using the <strong>SudokuOne</strong> mobile application ("App"), you agree to be bound by this Terms of Service ("Agreement"). If you do not agree to any part of this Agreement, do not use the App.</p>
-                        <p>This is a <strong>paid app</strong>. With a one-time purchase, you get permanent access to all features with free future updates.</p>
-                    </section>
+                        <h2><span class="number">1</span>Information We Collect</h2>
+                        <p>SudokuOne is a <strong>paid Sudoku puzzle game application</strong>. With a one-time purchase, you get permanent access to all features with free future updates. We have designed a minimal data collection approach to ensure your privacy is fully protected.</p>
 
-                    <section class="section" id="section-2-en">
-                        <h2><span class="number">2</span>License Grant</h2>
-                        <h3>2.1 Limited License</h3>
-                        <p>Subject to your payment of the app purchase price and your compliance with this Agreement, we grant you a limited, non-exclusive, non-transferable license to:</p>
+                        <h3>1.1 Locally Stored Game Data</h3>
+                        <p>To provide a better gaming experience, the following data is stored locally on your device:</p>
                         <ul>
-                            <li>Install and use the App on iOS devices you own or control</li>
-                            <li>Use it for personal, non-commercial purposes only</li>
-                            <li>Receive all future updates to the App at no additional cost</li>
+                            <li><strong>Game Progress</strong>: Completed levels, incomplete level states</li>
+                            <li><strong>Game Statistics</strong>: Number of games played, win rate, best scores</li>
+                            <li><strong>Achievement Data</strong>: Unlocked achievements and experience points</li>
+                            <li><strong>User Settings</strong>: Theme preferences, language selection, font size</li>
+                            <li><strong>Daily Challenge Records</strong>: Challenge streak and completion records</li>
                         </ul>
 
-                        <h3>2.2 Payment and Update Policy</h3>
                         <div class="info-box">
+                            <strong>Important Notes:</strong>
                             <ul>
-                                <li><strong>One-time Purchase</strong>: You pay only once to use the App permanently</li>
-                                <li><strong>Free Updates</strong>: All future feature updates, bug fixes, and improvements are provided free of charge</li>
-                                <li><strong>No Additional Fees</strong>: The App does not contain any in-app purchases requiring additional payment</li>
+                                <li>This data is stored only on your device locally using iOS UserDefaults and file system</li>
+                                <li>We do not upload this data to our servers</li>
+                                <li>Deleting the app will permanently delete this data</li>
                             </ul>
                         </div>
 
-                        <h3>2.3 License Restrictions</h3>
-                        <p>You agree not to:</p>
-                        <ul class="restriction-list">
-                            <li>Reverse engineer, decompile, or disassemble the App</li>
-                            <li>Attempt to hack, modify, or create derivative works of the App</li>
-                            <li>Sell, rent, lease, distribute, or transfer the App</li>
-                            <li>Use the App for commercial or profit-making purposes</li>
-                            <li>Remove or alter any copyright, trademark, or other proprietary marks in the App</li>
-                            <li>Use automated tools (such as bots, spiders) to access the App</li>
+                        <h3>1.2 Photo Library Access</h3>
+                        <p>The app provides a game score sharing feature, allowing you to save game completion screenshots to your photo library.</p>
+                        <ul>
+                            <li><strong>Purpose</strong>: Only accesses photo library when you actively choose to "save"</li>
+                            <li><strong>Trigger</strong>: Manual save button click</li>
+                            <li><strong>Data Use</strong>: Only writes generated share cards to your photo library</li>
+                            <li><strong>Third-party Sharing</strong>: We do not use this permission for any other purpose</li>
+                        </ul>
+
+                        <h3>1.3 Information We Do NOT Collect</h3>
+                        <div class="warning-box">
+                            <strong>To protect your privacy, we explicitly do NOT collect:</strong>
+                            <ul class="no-collect-list" style="margin-top: 10px;">
+                                <li>Your name, email address, or phone number</li>
+                                <li>Your real identity</li>
+                                <li>Geographic location</li>
+                                <li>Device unique identifiers (such as IDFA)</li>
+                                <li>Data sharing with third parties</li>
+                                <li>Any data for advertising tracking</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="section" id="section-2-en">
+                        <h2><span class="number">2</span>How We Use Your Data</h2>
+                        <p>We use collected data only for the following purposes:</p>
+
+                        <h3>2.1 Game Features</h3>
+                        <ul>
+                            <li>Save and restore game progress</li>
+                            <li>Track achievements and statistics</li>
+                            <li>Remember your preferences</li>
+                            <li>Provide personalized experience</li>
+                        </ul>
+
+                        <h3>2.2 App Improvement</h3>
+                        <ul>
+                            <li>Analyze usage patterns to improve game features</li>
+                            <li>Fix bugs and optimize performance</li>
+                            <li>Understand user preferences to deliver better experience</li>
                         </ul>
                     </section>
 
                     <section class="section" id="section-3-en">
-                        <h2><span class="number">3</span>Intellectual Property</h2>
-                        <h3>3.1 Ownership</h3>
-                        <p>The App and all its content, features, and functionality are protected by copyright, trademark, and other intellectual property laws.</p>
-                        <h3>3.2 Sudoku Game Rules</h3>
-                        <p>Sudoku is a classic logic puzzle game. This App implements Sudoku game rules, which are in the public domain.</p>
+                        <h2><span class="number">3</span>Data Sharing and Disclosure</h2>
+                        <div class="highlight-box">
+                            <strong>We do not sell, trade, or rent your personal information to third parties.</strong>
+                        </div>
+                        <p>We only share data in the following circumstances:</p>
+
+                        <h3>3.1 Service Providers</h3>
+                        <p>We may engage third-party companies to perform services on our behalf, such as:</p>
+                        <ul>
+                            <li>App distribution platforms (App Store)</li>
+                            <li>Analytics tools (only with your consent)</li>
+                        </ul>
+                        <p>These service providers have access to personal information only to perform specific tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+
+                        <h3>3.2 Legal Requirements</h3>
+                        <p>We may disclose your information when:</p>
+                        <ul>
+                            <li>Complying with laws, regulations, or government requests</li>
+                            <li>Protecting our rights, property, or safety</li>
+                            <li>Investigating alleged illegal activities</li>
+                        </ul>
                     </section>
 
                     <section class="section" id="section-4-en">
-                        <h2><span class="number">4</span>User Content and License</h2>
-                        <h3>4.1 Definition</h3>
-                        <p>"User Content" means any content you create or generate when using the App, including game progress, statistics, and shared screenshots.</p>
-                        <h3>4.2 Your Rights</h3>
-                        <p>You retain ownership of your User Content. By using the App, you grant us a license to store and process your game data solely for providing App functionality.</p>
+                        <h2><span class="number">4</span>Data Security</h2>
+                        <p>We take appropriate security measures to protect your personal information:</p>
+                        <ul>
+                            <li><strong>Local Encryption</strong>: Sensitive data is encrypted on device</li>
+                            <li><strong>Access Control</strong>: Only authorized personnel can access app data</li>
+                            <li><strong>Regular Audits</strong>: We regularly review our data collection and storage practices</li>
+                        </ul>
+                        <p>However, no security measure is perfect. We cannot guarantee absolute security.</p>
                     </section>
 
                     <section class="section" id="section-5-en">
-                        <h2><span class="number">5</span>Privacy</h2>
-                        <p>Your privacy is important to us. Please review our <a href="privacy-policy.html" style="color: var(--primary-color); font-weight: 600;">Privacy Policy</a> to learn how we collect, use, and protect your information.</p>
+                        <h2><span class="number">5</span>Children's Privacy</h2>
+                        <p>This app is suitable for users of all ages. We:</p>
+                        <ul>
+                            <li>Do not knowingly collect personal information from children under 13</li>
+                            <li>Do not use children's personal information for marketing</li>
+                            <li>Will delete such information if discovered</li>
+                        </ul>
                     </section>
 
                     <section class="section" id="section-6-en">
-                        <h2><span class="number">6</span>Disclaimer</h2>
-                        <p>The App is provided on an "AS IS" and "AS AVAILABLE" basis, without any warranties of any kind. We do not promise that the App will be uninterrupted, timely, secure, or error-free.</p>
+                        <h2><span class="number">6</span>Your Privacy Rights</h2>
+                        <p>You have the following rights regarding your data:</p>
+
+                        <h3>6.1 Access Right</h3>
+                        <p>You can view your game progress and statistics in the app's "Settings" > "Statistics".</p>
+
+                        <h3>6.2 Deletion Right</h3>
+                        <p>You can delete your data by:</p>
+                        <ul>
+                            <li>Selecting "Clear All Data" in app "Settings"</li>
+                            <li>Uninstalling the app to delete all local data</li>
+                        </ul>
+
+                        <h3>6.3 Correction Right</h3>
+                        <p>You can modify your preferences in "Settings" at any time.</p>
+
+                        <h3>6.4 Data Portability</h3>
+                        <p>All your data is stored on your device, and you have complete control.</p>
                     </section>
 
                     <section class="section" id="section-7-en">
-                        <h2><span class="number">7</span>Limitation of Liability</h2>
-                        <p>To the maximum extent permitted by law, we are not liable for indirect, incidental, special, punitive, or consequential damages. Our total liability shall not exceed the amount you paid for using the App.</p>
+                        <h2><span class="number">7</span>Third-Party Links</h2>
+                        <p>This app may contain links to third-party websites (such as support pages). We are not responsible for the privacy practices of these external sites. We encourage you to read the privacy policies of these websites.</p>
                     </section>
 
                     <section class="section" id="section-8-en">
-                        <h2><span class="number">8</span>Termination</h2>
-                        <h3>8.1 Your Right to Terminate</h3>
-                        <p>You may terminate this Agreement at any time by uninstalling the App.</p>
-                        <h3>8.2 Our Right to Terminate</h3>
-                        <p>We reserve the right to terminate your access to the App if you violate any term of this Agreement or engage in fraudulent or illegal activity.</p>
+                        <h2><span class="number">8</span>Changes to This Privacy Policy</h2>
+                        <p>We may update this Privacy Policy from time to time. We will notify you of any changes in the app. You should check this page periodically for the latest privacy policy.</p>
                     </section>
 
                     <section class="section" id="section-9-en">
-                        <h2><span class="number">9</span>Third-Party Services</h2>
-                        <p>This App is distributed through the Apple App Store. Apple is not a party to this Agreement. The App may contain links to third-party websites. We are not responsible for third-party websites.</p>
-                    </section>
-
-                    <section class="section" id="section-10-en">
-                        <h2><span class="number">10</span>Data and Backup</h2>
-                        <p>Your game data is stored locally on your device. We recommend regularly backing up your device. We are not liable for any data loss.</p>
-                    </section>
-
-                    <section class="section" id="section-11-en">
-                        <h2><span class="number">11</span>Updates and Modifications</h2>
-                        <p>We may automatically update the App, add or remove features, or modify App behavior. We reserve the right to modify this Agreement at any time.</p>
-                    </section>
-
-                    <section class="section" id="section-12-en">
-                        <h2><span class="number">12</span>Dispute Resolution</h2>
-                        <p>This Agreement is governed by the laws of the People's Republic of China (if applicable), or the laws of your place of residence.</p>
-                    </section>
-
-                    <section class="section" id="section-13-en">
-                        <h2><span class="number">13</span>Contact Us</h2>
+                        <h2><span class="number">9</span>Contact Us</h2>
                         <div class="contact-box">
                             <p><strong>Contact Information:</strong></p>
                             <p>📧 <strong>Email</strong>: <a href="mailto:99brose@gmail.com">99brose@gmail.com</a></p>
-                        </div>
-
-                        <div class="thank-you">
-                            <p>Thank you for choosing SudokuOne!</p>
-                            <p>We are committed to providing you with the best Sudoku puzzle game experience.</p>
-                            <p>If you have any questions, suggestions, or feedback, please feel free to contact us.</p>
+                            <p>We will respond to your inquiry as soon as possible, typically within 7 business days.</p>
                         </div>
                     </section>
                 </div>
@@ -1003,7 +1029,7 @@
     <footer class="footer">
         <div class="footer-links">
             <a href="index.html">首页</a>
-            <a href="privacy-policy.html">隐私政策</a>
+            <a href="terms-of-use.html">用户协议</a>
             <a href="https://github.com/pm-yx/com.pmyx.Sudoku" target="_blank">GitHub</a>
         </div>
         <p>© 2026 数独大师 SudokuOne. All rights reserved.</p>
@@ -1053,33 +1079,25 @@
         function updateTOC(lang) {
             const toc = document.getElementById('toc');
             const sections = lang === 'en' ? [
-                {id: 'section-1-en', text: '1. Acceptance of Terms'},
-                {id: 'section-2-en', text: '2. License Grant'},
-                {id: 'section-3-en', text: '3. Intellectual Property'},
-                {id: 'section-4-en', text: '4. User Content'},
-                {id: 'section-5-en', text: '5. Privacy'},
-                {id: 'section-6-en', text: '6. Disclaimer'},
-                {id: 'section-7-en', text: '7. Limitation of Liability'},
-                {id: 'section-8-en', text: '8. Termination'},
-                {id: 'section-9-en', text: '9. Third-Party Services'},
-                {id: 'section-10-en', text: '10. Data and Backup'},
-                {id: 'section-11-en', text: '11. Updates'},
-                {id: 'section-12-en', text: '12. Dispute Resolution'},
-                {id: 'section-13-en', text: '13. Contact Us'}
+                {id: 'section-1-en', text: '1. Information We Collect'},
+                {id: 'section-2-en', text: '2. How We Use Your Data'},
+                {id: 'section-3-en', text: '3. Data Sharing'},
+                {id: 'section-4-en', text: '4. Data Security'},
+                {id: 'section-5-en', text: '5. Children\'s Privacy'},
+                {id: 'section-6-en', text: '6. Your Privacy Rights'},
+                {id: 'section-7-en', text: '7. Third-Party Links'},
+                {id: 'section-8-en', text: '8. Changes to Policy'},
+                {id: 'section-9-en', text: '9. Contact Us'}
             ] : [
-                {id: 'section-1', text: '1. 接受条款'},
-                {id: 'section-2', text: '2. 许可授予'},
-                {id: 'section-3', text: '3. 知识产权'},
-                {id: 'section-4', text: '4. 用户内容和许可'},
-                {id: 'section-5', text: '5. 隐私'},
-                {id: 'section-6', text: '6. 免责声明'},
-                {id: 'section-7', text: '7. 责任限制'},
-                {id: 'section-8', text: '8. 终止'},
-                {id: 'section-9', text: '9. 第三方服务'},
-                {id: 'section-10', text: '10. 数据和备份'},
-                {id: 'section-11', text: '11. 更新和修改'},
-                {id: 'section-12', text: '12. 争议解决'},
-                {id: 'section-13', text: '13. 联系我们'}
+                {id: 'section-1', text: '1. 收集的信息'},
+                {id: 'section-2', text: '2. 数据使用'},
+                {id: 'section-3', text: '3. 数据共享'},
+                {id: 'section-4', text: '4. 数据安全'},
+                {id: 'section-5', text: '5. 儿童隐私'},
+                {id: 'section-6', text: '6. 隐私权利'},
+                {id: 'section-7', text: '7. 第三方链接'},
+                {id: 'section-8', text: '8. 政策变更'},
+                {id: 'section-9', text: '9. 联系我们'}
             ];
 
             toc.innerHTML = sections.map(s => `<a href="#${s.id}">${s.text}</a>`).join('');

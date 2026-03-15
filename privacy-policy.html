@@ -77,7 +77,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            padding: 6px;
+        }
+
+        .top-nav .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .top-nav .nav-links {
@@ -643,7 +649,9 @@
     <nav class="top-nav">
         <div class="container">
             <a href="index.html" class="logo">
-                <div class="logo-icon">🎯</div>
+                <div class="logo-icon">
+                    <img src="images/sudokuone.png" alt="数独大师">
+                </div>
                 <span>SudokuOne</span>
             </a>
             <div class="nav-links">
