@@ -554,6 +554,64 @@
                 width: 40px;
                 height: 40px;
             }
+
+            .footer {
+                padding: 16px;
+            }
+
+            .content-wrapper {
+                border-radius: 12px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .top-nav .nav-links {
+                gap: 10px;
+            }
+
+            .top-nav .nav-links a {
+                font-size: 0.75rem;
+            }
+
+            .content-header {
+                padding: 20px 16px;
+            }
+
+            .content-header h1 {
+                font-size: 1.1rem;
+            }
+
+            .content-body {
+                padding: 16px;
+            }
+
+            .section h2 {
+                font-size: 1rem;
+            }
+
+            .section h2 .number {
+                width: 24px;
+                height: 24px;
+                font-size: 0.75rem;
+            }
+
+            .info-box, .highlight-box, .warning-box, .contact-box {
+                padding: 14px 16px;
+            }
+        }
+
+        @supports (padding: env(safe-area-inset-bottom)) {
+            .main-container {
+                padding-bottom: calc(24px + env(safe-area-inset-bottom));
+            }
+
+            .back-to-top {
+                bottom: calc(16px + env(safe-area-inset-bottom));
+            }
+        }
+
+        html {
+            overflow-x: hidden;
         }
 
         /* Print Styles */

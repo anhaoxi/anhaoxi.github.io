@@ -184,6 +184,12 @@
         }
 
         @media (max-width: 480px) {
+            body {
+                background-attachment: scroll;
+                padding: 16px;
+                align-items: flex-start;
+            }
+
             .header {
                 padding: 35px 25px;
             }
@@ -204,6 +210,43 @@
                 width: 40px;
                 height: 40px;
                 font-size: 20px;
+            }
+
+            .back-link {
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            body {
+                padding: 12px;
+            }
+
+            .header {
+                padding: 28px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.3rem;
+            }
+
+            .content {
+                padding: 20px 16px;
+            }
+
+            .link-card {
+                padding: 14px 14px;
+                gap: 12px;
+            }
+
+            .link-card .title {
+                font-size: 1rem;
+            }
+        }
+
+        @supports (padding: env(safe-area-inset-bottom)) {
+            body {
+                padding-bottom: calc(20px + env(safe-area-inset-bottom));
             }
         }
     </style>
